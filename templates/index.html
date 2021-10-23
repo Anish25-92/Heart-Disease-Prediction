@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Disease</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Heart Disease</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="Sex" placeholder="Sex" required="required" />
+	<input type="text" name="Chest pain type" placeholder="Chest pain type" required="required" />
+        <input type="text" name="Resting blood pressure" placeholder="Resting blood pressure" required="required" />
+              <input type="text" name="FBS" placeholder="FBS" required="required" />
+              <input type="text" name="Serum cholestoral (mg/dl)" placeholder="Serum cholestoral (mg/dl)" required="required" />
+              <input type="text" name="Resting electrocardiograph" placeholder="Resting electrocardiograph" required="required" />
+              <input type="text" name="Maximum heart rate" placeholder="Maximum heart rate" required="required" />
+                   <input type="text" name="Exercise agina" placeholder="Exercise agina" required="required" />
+                   <input type="text" name="Oldpeak" placeholder="Oldpeak" required="required" />
+                   <input type="text" name="ST segment" placeholder="ST segment" required="required" />
+                   <input type="text" name="Flourosopy" placeholder="Flourosopy" required="required" />
+                   <input type="text" name="Thal" placeholder="Thal" required="required" />
+
+                            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
